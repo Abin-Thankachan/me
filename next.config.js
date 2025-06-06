@@ -1,1 +1,1 @@
-module.exports = { images: { domains: [] }, };
+module.exports = { images: { domains: [] }, output: "export" };
