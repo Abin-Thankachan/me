@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Noto_Sans } from "next/font/google";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -18,8 +19,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={notoSans.className}>
-      <body className="font-sans">{children}</body>
+    <html lang="en" suppressHydrationWarning className={notoSans.className}>
+      <body className="font-sans antialiased bg-white dark:bg-[#000000] text-[#1d1d1f] dark:text-[#f5f5f7] transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

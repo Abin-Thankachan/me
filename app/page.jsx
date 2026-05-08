@@ -1,46 +1,23 @@
 "use client";
 
-import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Experience from "./components/Experience";
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
 export default function Home() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const sections = document.querySelectorAll(".fade-in");
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <main className="bg-lavender text-red-900">
+    <main className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
       <Navbar />
-      <div className="fade-in">
-        <Hero />
-      </div>
-      <div className="fade-in">
-        <About />
-      </div>
-      <div className="fade-in">
-        <Projects />
-      </div>
-      <div className="fade-in">
-        <Contact />
-      </div>
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Skills />
+      <Contact />
     </main>
   );
 }
