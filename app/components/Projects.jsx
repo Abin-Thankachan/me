@@ -21,7 +21,7 @@ const projects = [
     title: "E-Commerce Platform",
     subtitle: "Full Stack Solution",
     description: "A comprehensive scalable e-commerce application handling thousands of concurrent users.",
-    image: "/ecommerce-screenshot.jpg",
+    image: "/projects/ecommerce.jpg",
     tags: ["Next.js", "Node.js", "MongoDB"],
     link: "#",
     featured: true,
@@ -31,7 +31,7 @@ const projects = [
     title: "Government Portal",
     subtitle: "Public Service App",
     description: "Secure web portal built for regional government public services.",
-    image: "/gov-portal-screenshot.jpg",
+    image: "/projects/gov.jpg",
     tags: ["Angular", "Python", "PostgreSQL"],
     link: "#",
   },
@@ -40,7 +40,7 @@ const projects = [
     title: "Health & Fitness Tracker",
     subtitle: "Mobile Application",
     description: "Cross-platform mobile application for tracking daily fitness goals.",
-    image: "/fitness-app-screenshot.jpg",
+    image: "/projects/fitness.jpg",
     tags: ["Flutter", "Firebase"],
     link: "#",
   },
@@ -49,7 +49,7 @@ const projects = [
     title: "AI Chat Assistant",
     subtitle: "Machine Learning",
     description: "Intelligent chatbot with natural language processing capabilities.",
-    image: "/ai-chat-screenshot.jpg",
+    image: "/projects/ai.jpg",
     tags: ["Python", "FastAPI"],
     link: "#",
   },
@@ -89,7 +89,7 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                    className="absolute inset-0 w-full h-full object-cover z-10 group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                     onError={(e) => {
                       e.target.style.display = 'none';
                     }}

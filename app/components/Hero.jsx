@@ -35,20 +35,21 @@ export default function Hero() {
 
         {/* Minimalist image/graphic representation */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 sm:mt-24 w-full max-w-5xl"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-16 sm:mt-24 w-full max-w-5xl group"
         >
           <div className="relative aspect-video rounded-3xl overflow-hidden bg-gray-100 dark:bg-appleGray-900 border border-gray-200/50 dark:border-gray-800/50 shadow-2xl">
              <img
-              src="/profile.png"
+              src="/hero-bg.jpg"
               alt="Abin Work Setup"
-              className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+              className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
               onError={(e) => {
                 e.target.style.display = 'none';
               }}
             />
+            <div className="absolute inset-0 bg-black/10 dark:bg-black/20 group-hover:bg-transparent transition-colors duration-1000" />
             {/* Fallback pattern if image is missing */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-appleGray-900 dark:to-black -z-10 flex items-center justify-center">
               <span className="text-gray-300 dark:text-gray-700 text-6xl font-bold tracking-tighter opacity-50">Creative Developer</span>
