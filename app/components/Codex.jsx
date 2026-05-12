@@ -37,7 +37,7 @@ export default function Codex() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center mb-16"
         >
           <h2 className="font-cinzel text-4xl md:text-5xl lg:text-6xl text-gold mb-4">
@@ -67,7 +67,7 @@ export default function Codex() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.8, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                 className="group flex flex-col items-center justify-center gap-4 p-4 cursor-pointer"
               >
                 <div className="relative w-20 h-20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">

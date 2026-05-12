@@ -108,27 +108,29 @@ export default function Hero() {
           {/* Framed Portrait Container */}
           <div className="relative w-72 sm:w-80 md:w-96 lg:w-[450px] aspect-[3/4] p-4 gold-border bg-matte-gray/30 backdrop-blur-sm z-10 shadow-2xl">
             {/* The actual image or artistic representation */}
-            <div className="relative w-full h-full overflow-hidden bg-matte-black/50 border border-gold/20 flex items-center justify-center">
-              {/* Replace with actual image in production, using a placeholder/symbolic visual for now */}
-              <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+            <div className="relative w-full h-full overflow-hidden bg-matte-black/80 border border-gold/20 flex items-center justify-center group/portrait">
+              {/* Actual Profile Image with Renaissance Filters */}
+              <motion.img
+                src="/profile.png"
+                alt="Portrait of Abin"
+                className="absolute inset-0 w-full h-full object-cover sepia-[0.3] contrast-[1.1] grayscale-[0.2] mix-blend-luminosity opacity-80 transition-all duration-1000 ease-out group-hover/portrait:scale-105 group-hover/portrait:sepia-[0.1] group-hover/portrait:grayscale-0 group-hover/portrait:opacity-100"
+                initial={{ scale: 1.1, filter: "blur(10px)" }}
+                animate={{ scale: 1, filter: "blur(0px)" }}
+                transition={{ duration: 2, delay: 2.8, ease: [0.25, 0.1, 0.25, 1] }}
+              />
 
-              {/* Central Geometric/Alchemical Symbol as placeholder for portrait */}
+              {/* Texture overlay to give it a canvas/painted feel */}
+              <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] pointer-events-none"></div>
+
+              {/* Subtle animated light sweep over the portrait */}
               <motion.div
-                animate={{
-                  rotate: [0, 360],
-                }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="relative w-48 h-48 border border-gold/30 rounded-full flex items-center justify-center"
-              >
-                <div className="absolute inset-2 border border-gold/20 rounded-full rotate-45"></div>
-                <div className="absolute inset-4 border border-gold/10 rounded-sm rotate-12"></div>
-                <div className="w-24 h-24 border border-gold/40 rotate-45 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-gold/10 rounded-full animate-pulse shadow-gold-glow"></div>
-                </div>
-              </motion.div>
+                className="absolute inset-0 bg-gradient-to-tr from-transparent via-gold/10 to-transparent transform -translate-x-full pointer-events-none"
+                animate={{ translateX: ["-100%", "200%"] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+              />
 
-              {/* Subtle overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-matte-black via-transparent to-transparent opacity-80"></div>
+              {/* Subtle overlay gradient for depth */}
+              <div className="absolute inset-0 bg-gradient-to-t from-matte-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
             </div>
 
             {/* Ornate corner pieces */}

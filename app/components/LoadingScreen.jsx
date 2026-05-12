@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { SiFramer } from "react-icons/si";
+
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);

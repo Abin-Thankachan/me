@@ -15,6 +15,7 @@ export default function Home() {
   return (
     <main className="bg-matte-black text-parchment min-h-screen selection:bg-gold/30 selection:text-gold relative overflow-x-hidden">
       <div className="texture-overlay"></div>
+      <div className="vignette-overlay"></div>
 
       <LoadingScreen />
       <AmbientDust />

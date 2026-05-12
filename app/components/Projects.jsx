@@ -41,7 +41,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center mb-20"
         >
           <h2 className="font-cinzel text-4xl md:text-5xl lg:text-6xl text-gold mb-4">
@@ -63,20 +63,27 @@ export default function Projects() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
               className={`flex flex-col ${
                 index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
               } gap-12 items-center`}
             >
               {/* Image / Artwork Frame */}
               <div className="w-full lg:w-1/2 relative group">
-                <div className="relative aspect-[4/3] p-3 gold-border bg-matte-gray/50 backdrop-blur-sm shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-                  <div className="w-full h-full bg-matte-black/80 border border-gold/20 flex items-center justify-center relative overflow-hidden">
-                    {/* Placeholder for project image - styling as an architectural blueprint or arcane diagram */}
-                    <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(212,175,55,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.1)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-                    <div className="w-32 h-32 border border-gold/40 rounded-full flex items-center justify-center group-hover:rotate-180 transition-transform duration-1000 ease-in-out">
-                       <div className="w-24 h-24 border border-gold/20 rotate-45"></div>
-                    </div>
+                <div className="relative aspect-[4/3] p-3 gold-border bg-matte-gray/50 backdrop-blur-sm shadow-2xl transition-transform duration-1000 ease-[0.25,0.1,0.25,1] group-hover:scale-[1.03]">
+                  <div className="w-full h-full bg-matte-black/80 border border-gold/20 flex items-center justify-center relative overflow-hidden group/artwork">
+                    {/* Actual Project Image mapped to me_working.png for now */}
+                    <img
+                      src="/me_working.png"
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover sepia-[0.4] grayscale-[0.3] contrast-[1.2] opacity-70 transition-all duration-1000 ease-out group-hover/artwork:scale-110 group-hover/artwork:sepia-[0.2] group-hover/artwork:grayscale-0 group-hover/artwork:opacity-100"
+                    />
+
+                    {/* Canvas/Architectural overlay texture */}
+                    <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[linear-gradient(rgba(212,175,55,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.1)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none"></div>
+
+                    {/* Dynamic vignette on artwork */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-matte-black via-transparent to-transparent opacity-80 pointer-events-none"></div>
                   </div>
 
                   {/* Ornaments */}
