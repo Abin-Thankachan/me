@@ -1,25 +1,40 @@
 import "./globals.css";
-import { Noto_Sans } from "next/font/google";
+import { Cinzel, Cormorant_Garamond, Inter } from "next/font/google";
 
-const notoSans = Noto_Sans({
+const cinzel = Cinzel({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-cinzel",
+  display: "swap",
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
 export const metadata = {
-  title: "Abin Thankachan | Software Engineer",
+  title: "Abin Thankachan | AI & Software Engineer",
   keywords:
-    "Software Engineer, Freelance Developer, Web Development, Next.js, React",
+    "AI Engineer, Software Engineer, Renaissance Portfolio, Next.js, React",
   description:
-    "Abin Thankachan is a Software Engineer and Freelance Developer specializing in building beautiful, functional web applications.",
+    "Abin Thankachan is an AI & Software Engineer. A timeless digital palace where renaissance artistry meets advanced technology.",
   authors: [{ name: "Abin Thankachan" }],
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={notoSans.className}>
-      <body className="font-sans">{children}</body>
+    <html lang="en" className={`${cinzel.variable} ${cormorantGaramond.variable} ${inter.variable}`}>
+      <body className="font-sans bg-[#0A0A0A] text-[#F5E6D3] antialiased selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
+        {children}
+      </body>
     </html>
   );
 }
